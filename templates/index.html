@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>互联网行业校园招聘数据可视化</title>
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <script src='https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js'></script>
+</head>
+<body>
+<!-- 头部的盒子 -->
+<header>
+    <h1>互联网行业校园招聘数据可视化</h1>
+    <div class="showTime"></div>
+    <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+            clearTimeout(t); //清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours(); //获取时
+            var m = dt.getMinutes(); //获取分
+            var s = dt.getSeconds(); //获取秒
+            document.querySelector(".showTime").innerHTML =
+                "当前时间：" +
+                y +
+                "年" +
+                mt +
+                "月" +
+                day +
+                "-" +
+                h +
+                "时" +
+                m +
+                "分" +
+                s +
+                "秒";
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+    </script>
+
+</header>
+
+<!-- 页面主体部分 -->
+<section class="mainbox">
+    <div class="column">
+        <div class="panel bar">
+            <h2>岗位就业情况</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+            <h2>
+                岗位需求人员情况 <a href="javacript:;">2020</a
+            ><a href="javascript:;">2021</a>
+            </h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+            <h2>公司类型</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+    <div class="column">
+        <!-- no模块制作 -->
+        <div class="no" style="margin-bottom: 0.1875rem;">
+            <div class="no-hd">
+                <ul>
+                    <li>8228</li>
+                </ul>
+            </div>
+            <div class="no-bd">
+                <ul>
+                    <li style="color: #fff">互联网校招/实习岗位</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 地图模块 -->
+        <div class="panel_s" style="margin-bottom: 0.1875rem;">
+            <h2 style="color: #F8B448;text-align: center;transform: translateY(10px);">
+                公司福利词云
+            </h2>
+            <div class="map" style="margin-top: 20px" id="main">
+            </div>
+        </div>
+        <div class="panel_s">
+            <h2 style="color: #F8B448;text-align: center;transform: translateY(10px);">
+                热门岗位词云
+            </h2>
+            <div class="map" style="margin-top: 20px" id="position">
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="panel bar2">
+            <h2>岗位技能需求情况</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2">
+            <h2>行业公司平均工资情况</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+            <h2>岗位学历要求情况</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+</section>
+<script src="../static/js/flexible.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.0/echarts.min.js"></script>
+{#<script src="../static/js/echarts-wordcloud.min.js"></script>#}
+<script src="../static/js/jquery.js"></script>
+<script src="../static/js/index.js"></script>
+</body>
+</html>
